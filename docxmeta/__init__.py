@@ -38,21 +38,7 @@ def process():
         with document.archive:
             if request.path == "/api/inspect":
                 return jsonify(document.inspect())
-            changes = json.loads(request.form.get("changes", "{}"))
-            if not isinstance(changes, dict):
-                raise InvalidDocument("Formato de alterações inválido.")
-            mode = changes.get("mode", "edit")
-            if mode == "clear":
-                document.remove_properties("core", "app", "custom")
-            elif mode in ("edit", "anon"):
-                document.update_fields("core", changes.get("core", {}))
-                document.update_fields("app", changes.get("app", {}))
-                if mode == "anon":
-                    document.anonymize()
-                else:
-                    document.update_custom(changes.get("custom", []))
-            else:
-                raise InvalidDocument("Modo de edição inválido.")
+            document.apply(json.loads(request.form.get("changes", "{}")))
             output = document.export()
     except InvalidDocument as error:
         return jsonify(error=str(error)), 400

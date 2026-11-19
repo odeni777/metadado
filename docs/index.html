@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>DocxMetaEditor</title>
+  <link rel="icon" href="./static/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="./static/styles.css">
+  <script src="./static/browser.js" defer></script>
+  <script src="./static/editor.js" defer></script>
+</head>
+<body>
+
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s7-3 7-9V5l-7-3-7 3v8c0 6 7 9 7 9Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-general" viewBox="0 0 24 24"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 5h6M9 12h6m-6 4h4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3m-4 5v2"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="/" aria-label="DocxMetaEditor, início"><span class="brand-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span><span>Docx<span class="brand-accent">Meta</span>Editor</span></a>
+    <span class="privacy-label"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"></use></svg> Sem armazenamento</span>
+  </div>
+</header>
+
+<main class="shell main-layout">
+  <section class="intro" aria-labelledby="page-title">
+    <div class="eyebrow"><span></span> DOCUMENTOS WORD</div>
+    <h1 id="page-title">Editor de <em>metadados</em></h1>
+    <p>Visualize, edite ou limpe os metadados de documentos Word<br class="intro-break"> sem alterar o conteúdo ou a formatação.</p>
+  </section>
+
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+  <section class="workspace-card" aria-labelledby="upload-title">
+    <div class="section-header">
+      <span class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span>
+      <div><h2 id="upload-title">Documento</h2><p>Adicione o arquivo Word que deseja editar.</p></div>
+    </div>
+    <div id="dropzone" class="dropzone">
+      <span class="upload-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-upload"></use></svg></span>
+      <h3>Arraste e solte seu arquivo aqui</h3>
+      <p>Microsoft Word (.docx) <span aria-hidden="true">·</span> Até 20 MB</p>
+      <button id="choose" class="button primary" type="button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-upload"></use></svg> Selecionar arquivo</button>
+    </div>
+    <div id="file-row" class="file-row" hidden>
+      <span class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span>
+      <div class="file-detail"><strong id="filename"></strong><small id="filesize"></small></div>
+      <button id="replace" class="button secondary" type="button">Trocar arquivo</button>
+    </div>
+    <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+  </section>
+
+  <section id="overview" class="overview" aria-labelledby="overview-title">
+    <h2 id="overview-title">O que você pode editar</h2>
+    <div class="feature-grid">
+      <article class="feature"><span class="feature-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-general"></use></svg></span><h3>Geral e datas</h3><p>Autor, título, revisão e datas de criação, modificação e impressão.</p></article>
+      <article class="feature"><span class="feature-icon purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"></use></svg></span><h3>Tempo e sistema</h3><p>Tempo de edição, empresa, aplicativo e estatísticas do documento.</p></article>
+      <article class="feature"><span class="feature-icon teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-layers"></use></svg></span><h3>Propriedades avançadas</h3><p>Adicione, edite ou remova propriedades personalizadas.</p></article>
+    </div>
+  </section>
+
+  <form id="editor" class="workspace-card editor" hidden>
+    <div class="tabs" role="tablist" aria-label="Grupos de metadados">
+      <button type="button" id="tab-core" role="tab" aria-selected="true" aria-controls="panel-core"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-general"></use></svg> Geral e datas</button>
+      <button type="button" id="tab-app" role="tab" aria-selected="false" aria-controls="panel-app" tabindex="-1"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"></use></svg> Tempo e sistema</button>
+      <button type="button" id="tab-custom" role="tab" aria-selected="false" aria-controls="panel-custom" tabindex="-1"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-layers"></use></svg> Propriedades avançadas</button>
+    </div>
+    <section id="panel-core" role="tabpanel" aria-labelledby="tab-core" class="editor-panel"></section>
+    <section id="panel-app" role="tabpanel" aria-labelledby="tab-app" class="editor-panel" hidden></section>
+    <section id="panel-custom" role="tabpanel" aria-labelledby="tab-custom" class="editor-panel" hidden>
+      <div class="panel-heading"><div><h2>Propriedades personalizadas</h2><p>Edite os campos existentes ou adicione novos.</p></div><button type="button" class="button secondary" id="add">+ Adicionar propriedade</button></div>
+      <div id="custom-list"></div>
+      <div id="advanced-list"></div>
+    </section>
+    <div class="editor-actions">
+      <div><label class="field mode-field"><span>Modo de exportação</span><select id="mode">
+        <option value="edit">Aplicar alterações</option>
+        <option value="anon">Anonimizar / Limpar rastros</option>
+        <option value="clear">Limpar todas as propriedades</option>
+      </select></label><p id="mode-hint" class="action-hint"></p></div>
+      <button class="button primary" id="download" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-download"></use></svg> Aplicar alterações e baixar .docx</button>
+    </div>
+  </form>
+
+  <aside class="privacy-note"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"></use></svg><p><strong>Seu documento fica no seu navegador.</strong> O arquivo não é enviado a um servidor.</p></aside>
+</main>
+
+<footer class="footer"><div class="shell footer-inner"><span>DocxMetaEditor</span><span>Microsoft Word <span aria-hidden="true">·</span> OpenXML</span></div></footer>
+</body>
+</html>

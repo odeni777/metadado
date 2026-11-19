@@ -7,6 +7,7 @@
   <title>DocxMetaEditor</title>
   <link rel="icon" href="{{ url_for('static', filename='favicon.svg') }}" type="image/svg+xml">
   <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+  {% if browser_mode %}<script src="{{ url_for('static', filename='browser.js') }}" defer></script>{% endif %}
   <script src="{{ url_for('static', filename='editor.js') }}" defer></script>
 </head>
 <body>
@@ -92,7 +93,7 @@
     </div>
   </form>
 
-  <aside class="privacy-note">{{ icon('shield', 21) }}<p><strong>Seu documento é processado sob demanda.</strong> Nenhum arquivo é mantido após a resposta.</p></aside>
+  <aside class="privacy-note">{{ icon('shield', 21) }}<p><strong>{% if browser_mode %}Seu documento fica no seu navegador.</strong> O arquivo não é enviado a um servidor.{% else %}Seu documento é processado sob demanda.</strong> Nenhum arquivo é mantido após a resposta.{% endif %}</p></aside>
 </main>
 
 <footer class="footer"><div class="shell footer-inner"><span>DocxMetaEditor</span><span>Microsoft Word <span aria-hidden="true">·</span> OpenXML</span></div></footer>

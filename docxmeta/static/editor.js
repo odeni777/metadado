@@ -191,6 +191,7 @@ tabs.forEach((tab, index) => {
 });
 
 async function send(path, file, changes) {
+  if (window.processDocxLocally) return window.processDocxLocally(path, file, changes);
   const data = new FormData();
   data.append('file', file);
   if (changes) data.append('changes', JSON.stringify(changes));

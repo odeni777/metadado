@@ -366,6 +366,22 @@ class Document:
             self.register(group, remove=True)
             self.writes[self.paths[group]] = None
 
+    def apply(self, changes):
+        if not isinstance(changes, dict):
+            raise InvalidDocument("Formato de alterações inválido.")
+        mode = changes.get("mode", "edit")
+        if mode == "clear":
+            self.remove_properties("core", "app", "custom")
+        elif mode in ("edit", "anon"):
+            self.update_fields("core", changes.get("core", {}))
+            self.update_fields("app", changes.get("app", {}))
+            if mode == "anon":
+                self.anonymize()
+            else:
+                self.update_custom(changes.get("custom", []))
+        else:
+            raise InvalidDocument("Modo de edição inválido.")
+
     def export(self):
         output = BytesIO()
         with ZipFile(output, "w") as archive:

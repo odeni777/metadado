@@ -2,6 +2,14 @@
 
 Aplicação web em português para visualizar, editar e limpar propriedades de arquivos do Microsoft Word. O servidor usa Flask, `zipfile` e `lxml`. A interface usa HTML, Tailwind CSS e JavaScript sem framework.
 
+## Usar no navegador
+
+A versão do GitHub Pages processa o documento no próprio navegador. O primeiro uso carrega o runtime Python e a biblioteca XML pela internet.
+
+- Para abrir sem instalar nada, baixe [DocxMetaEditor.html](https://github.com/odeni777/metadado/blob/main/docs/DocxMetaEditor.html) pelo botão de download do arquivo no GitHub e abra o HTML no navegador.
+- Para hospedar o site no GitHub, em **Settings → Pages**, escolha **Deploy from a branch**, branch **main** e pasta **/docs**. O endereço previsto após a publicação é https://odeni777.github.io/metadado/.
+- Após alterar o código, execute `npm run build` para recompilar o CSS quando necessário e `python scripts/build_pages.py` para atualizar o site em `docs/`.
+
 ## Executar localmente
 
 Requer Python 3.10 ou superior.

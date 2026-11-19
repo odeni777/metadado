@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f7fb">
+  <title>DocxMetaEditor</title>
+  <style>/*! tailwindcss v4.1.18 | MIT License | https://tailwindcss.com */
+@layer properties{@supports (((-webkit-hyphens:none)) and (not (margin-trim:inline))) or ((-moz-orient:inline) and (not (color:rgb(from red r g b)))){*,:before,:after,::backdrop{--tw-font-weight:initial}}}@layer theme{:root,:host{--font-sans:ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";--font-mono:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;--spacing:.25rem;--font-weight-semibold:600;--font-weight-bold:700;--default-font-family:var(--font-sans);--default-mono-font-family:var(--font-mono)}}@layer base{*,:after,:before,::backdrop{box-sizing:border-box;border:0 solid;margin:0;padding:0}::file-selector-button{box-sizing:border-box;border:0 solid;margin:0;padding:0}html,:host{-webkit-text-size-adjust:100%;tab-size:4;line-height:1.5;font-family:var(--default-font-family,ui-sans-serif,system-ui,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji");font-feature-settings:var(--default-font-feature-settings,normal);font-variation-settings:var(--default-font-variation-settings,normal);-webkit-tap-highlight-color:transparent}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;-webkit-text-decoration:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,samp,pre{font-family:var(--default-mono-font-family,ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace);font-feature-settings:var(--default-mono-font-feature-settings,normal);font-variation-settings:var(--default-mono-font-variation-settings,normal);font-size:1em}small{font-size:80%}sub,sup{vertical-align:baseline;font-size:75%;line-height:0;position:relative}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}:-moz-focusring{outline:auto}progress{vertical-align:baseline}summary{display:list-item}ol,ul,menu{list-style:none}img,svg,video,canvas,audio,iframe,embed,object{vertical-align:middle;display:block}img,video{max-width:100%;height:auto}button,input,select,optgroup,textarea{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}::file-selector-button{font:inherit;font-feature-settings:inherit;font-variation-settings:inherit;letter-spacing:inherit;color:inherit;opacity:1;background-color:#0000;border-radius:0}:where(select:is([multiple],[size])) optgroup{font-weight:bolder}:where(select:is([multiple],[size])) optgroup option{padding-inline-start:20px}::file-selector-button{margin-inline-end:4px}::placeholder{opacity:1}@supports (not ((-webkit-appearance:-apple-pay-button))) or (contain-intrinsic-size:1px){::placeholder{color:currentColor}@supports (color:color-mix(in lab, red, red)){::placeholder{color:color-mix(in oklab,currentcolor 50%,transparent)}}}textarea{resize:vertical}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-date-and-time-value{min-height:1lh;text-align:inherit}::-webkit-datetime-edit{display:inline-flex}::-webkit-datetime-edit-fields-wrapper{padding:0}::-webkit-datetime-edit{padding-block:0}::-webkit-datetime-edit-year-field{padding-block:0}::-webkit-datetime-edit-month-field{padding-block:0}::-webkit-datetime-edit-day-field{padding-block:0}::-webkit-datetime-edit-hour-field{padding-block:0}::-webkit-datetime-edit-minute-field{padding-block:0}::-webkit-datetime-edit-second-field{padding-block:0}::-webkit-datetime-edit-millisecond-field{padding-block:0}::-webkit-datetime-edit-meridiem-field{padding-block:0}::-webkit-calendar-picker-indicator{line-height:1}:-moz-ui-invalid{box-shadow:none}button,input:where([type=button],[type=reset],[type=submit]){appearance:button}::file-selector-button{appearance:button}::-webkit-inner-spin-button{height:auto}::-webkit-outer-spin-button{height:auto}[hidden]:where(:not([hidden=until-found])){display:none!important}}@layer components;@layer utilities{.static{position:static}.grid{display:grid}.hidden{display:none}}:root{color-scheme:light;--ink:#15223b;--muted:#566780;--line:#e0e6ef;--blue:#3454d9;--page:#f5f7fb}body{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;background:var(--page);min-height:100vh;color:var(--ink);font-family:Inter,ui-sans-serif,system-ui,sans-serif}[hidden]{display:none!important}.shell{width:min(100% - 48px,1056px);margin-inline:auto}.topbar{border-bottom:1px solid var(--line);background:#fff;height:72px}.topbar-inner,.footer-inner{justify-content:space-between;align-items:center;gap:calc(var(--spacing)*4);height:100%;display:flex}.brand{align-items:center;gap:calc(var(--spacing)*2.5);--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);letter-spacing:-.65px;font-size:19px;display:inline-flex}.brand-accent{color:var(--blue)}.brand-icon,.section-icon,.feature-icon,.upload-icon{flex-shrink:0;place-items:center;display:grid}.brand-icon{background:var(--blue);color:#fff;border-radius:9px;width:35px;height:35px}.privacy-label{align-items:center;gap:calc(var(--spacing)*2);--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);color:#466078;background:#f0f4f8;border-radius:3.40282e38px;padding:7px 12px;font-size:12px;display:inline-flex}.main-layout{padding-top:48px;padding-bottom:34px}.intro{margin-bottom:31px}.eyebrow{align-items:center;gap:calc(var(--spacing)*2);--tw-font-weight:var(--font-weight-bold);font-weight:var(--font-weight-bold);letter-spacing:.15em;color:#3957b7;margin-bottom:13px;font-size:11px;display:flex}.eyebrow span{background:#5272ea;border-radius:50%;width:7px;height:7px}h1{letter-spacing:-.063em;font-size:clamp(37px,6vw,59px);font-weight:760;line-height:1.08}h1 em{color:var(--blue);font-style:normal}.intro p{color:var(--muted);margin-top:14px;font-size:16px;line-height:1.65}.workspace-card,.feature{border:1px solid var(--line);background:#fff;border-radius:16px;box-shadow:0 2px 4px #15223b04}.workspace-card{padding:22px}.section-header{align-items:center;gap:calc(var(--spacing)*3);margin-bottom:18px;display:flex}.section-icon{color:#3454d9;background:#edf1ff;border-radius:10px;width:41px;height:41px}h2{letter-spacing:-.025em;font-size:17px;font-weight:735}.section-header p,.panel-heading p{color:var(--muted);margin-top:2px;font-size:13px}.dropzone{text-align:center;background:#f8faff;border:1.5px dashed #a8b9e9;border-radius:12px;flex-direction:column;justify-content:center;align-items:center;min-height:226px;padding:21px;transition:background .15s,border-color .15s;display:flex}.dropzone.is-dragging{border-color:var(--blue);background:#e8eeff}.upload-icon{width:52px;height:52px;color:var(--blue);background:#e9efff;border-radius:13px;margin-bottom:11px}.dropzone h3{letter-spacing:-.02em;font-size:17px;font-weight:730}.dropzone p{color:var(--muted);margin-top:5px;margin-bottom:17px;font-size:13px}.button{justify-content:center;align-items:center;gap:calc(var(--spacing)*2);text-align:center;--tw-font-weight:var(--font-weight-semibold);font-weight:var(--font-weight-semibold);cursor:pointer;border-radius:8px;flex-shrink:0;min-height:41px;padding:8px 15px;font-size:13px;transition:background .15s;display:inline-flex}.button:disabled{opacity:.6;cursor:wait}.primary{background:var(--blue);color:#fff;box-shadow:0 2px 4px #3454d929}.primary:hover{background:#2645c3}.secondary{color:#2d49bd;background:#f0f4ff;border:1px solid #dce4ff}.secondary:hover{background:#e4ebff}.overview{margin-top:25px}.overview h2{margin-bottom:11px}.feature-grid{gap:calc(var(--spacing)*3.5);grid-template-columns:repeat(3,minmax(0,1fr));display:grid}.feature{padding:17px}.feature-icon{border-radius:9px;width:35px;height:35px;margin-bottom:10px}.blue{color:#3454d9;background:#edf1ff}.purple{color:#724dc8;background:#f1ecff}.teal{color:#007968;background:#e5f6f3}.feature h3{letter-spacing:-.01em;font-size:14px;font-weight:730}.feature p{color:var(--muted);margin-top:4px;font-size:12.5px;line-height:1.55}.privacy-note{align-items:center;gap:calc(var(--spacing)*2.5);color:#455974;background:#eaf0fa;border-radius:10px;margin-top:17px;padding:11px 13px;font-size:12px;display:flex}.privacy-note svg{color:#4160ac;flex-shrink:0}.footer{border-top:1px solid var(--line);color:#5b6b82;height:57px;font-size:12px}.footer-inner span:first-child{font-weight:650}.file-row{align-items:center;gap:calc(var(--spacing)*3);border:1px solid var(--line);border-radius:11px;padding:11px;display:flex}.file-detail{flex:1;min-width:0}.file-detail strong,.file-detail small{overflow-wrap:anywhere;display:block}.file-detail small{color:var(--muted);margin-top:2px}.status{color:#26468f;background:#eaf1ff;border-radius:8px;margin-bottom:12px;padding:10px 14px;font-size:14px}.status.error{color:#a32929;background:#fff0ef}.editor{margin-top:18px}.tabs{gap:calc(var(--spacing)*1);border-bottom:1px solid var(--line);flex-wrap:wrap;display:flex}.tabs button{align-items:center;gap:calc(var(--spacing)*2);color:var(--muted);cursor:pointer;border-bottom:2px solid #0000;padding:12px 11px;font-size:13px;display:inline-flex}.tabs [aria-selected=true]{color:var(--blue);border-color:var(--blue);font-weight:700}.editor-panel{padding:18px 0}.field-grid{gap:calc(var(--spacing)*4);grid-template-columns:repeat(2,minmax(0,1fr));display:grid}.field{min-width:calc(var(--spacing)*0);gap:calc(var(--spacing)*1.5);flex-direction:column;font-size:13px;font-weight:620;display:flex}.field input,.field select,.field textarea{background:#fff;border:1px solid #cbd5e3;border-radius:8px;width:100%;min-width:0;padding:8px 10px;font-weight:400}.field textarea{resize:vertical}.field small,.action-hint,.empty{color:var(--muted);font-size:12px;font-weight:400}.panel-heading,.editor-actions{justify-content:space-between;align-items:center;gap:calc(var(--spacing)*3);flex-wrap:wrap;display:flex}.panel-heading{margin-bottom:15px}.editor-actions{border-top:1px solid var(--line);padding-top:15px}.editor-actions>div{flex:280px}.mode-field{max-width:300px}.action-hint{margin-top:5px}.custom-row{align-items:flex-end;gap:calc(var(--spacing)*3);border:1px solid var(--line);border-radius:9px;grid-template-columns:minmax(0,1fr) minmax(0,.75fr) minmax(0,1fr) auto;margin-bottom:12px;padding:12px;display:grid}.custom-row .button{color:#983633}.advanced-item{overflow-wrap:anywhere;padding:8px 0;font-size:13px}:focus-visible{outline:2px solid var(--blue);outline-offset:3px}@media (max-width:640px){.shell{width:calc(100% - 32px)}.main-layout{padding-top:30px}.topbar{height:60px}.brand{font-size:16px}.privacy-label{padding:8px;font-size:0}.intro-break{display:none}.workspace-card{padding:14px}.feature-grid,.field-grid{grid-template-columns:1fr}.custom-row{grid-template-columns:1fr 1fr}.editor-actions .primary{width:100%}}@property --tw-font-weight{syntax:"*";inherits:false}</style>
+</head>
+<body>
+
+<svg class="hidden" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <symbol id="i-file" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></symbol>
+  <symbol id="i-upload" viewBox="0 0 24 24"><path d="M12 16V4m-5 5 5-5 5 5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5M4 16v3a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-3"/></symbol>
+  <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s7-3 7-9V5l-7-3-7 3v8c0 6 7 9 7 9Z"/><path d="m9 12 2 2 4-4"/></symbol>
+  <symbol id="i-general" viewBox="0 0 24 24"><path d="M7 3h10a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2Zm2 5h6M9 12h6m-6 4h4"/></symbol>
+  <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+  <symbol id="i-layers" viewBox="0 0 24 24"><path d="m12 3 9 5-9 5-9-5 9-5Zm-9 9 9 5 9-5M3 16l9 5 9-5"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14m-5-5 5 5-5 5"/></symbol>
+  <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 1 1 8 0v3m-4 5v2"/></symbol>
+</svg>
+
+<header class="topbar">
+  <div class="shell topbar-inner">
+    <a class="brand" href="/" aria-label="DocxMetaEditor, início"><span class="brand-icon"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span><span>Docx<span class="brand-accent">Meta</span>Editor</span></a>
+    <span class="privacy-label"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-lock"></use></svg> Sem armazenamento</span>
+  </div>
+</header>
+
+<main class="shell main-layout">
+  <section class="intro" aria-labelledby="page-title">
+    <div class="eyebrow"><span></span> DOCUMENTOS WORD</div>
+    <h1 id="page-title">Editor de <em>metadados</em></h1>
+    <p>Visualize, edite ou limpe os metadados de documentos Word<br class="intro-break"> sem alterar o conteúdo ou a formatação.</p>
+  </section>
+
+  <div id="status" class="status" role="status" aria-live="polite" hidden></div>
+
+  <section class="workspace-card" aria-labelledby="upload-title">
+    <div class="section-header">
+      <span class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span>
+      <div><h2 id="upload-title">Documento</h2><p>Adicione o arquivo Word que deseja editar.</p></div>
+    </div>
+    <div id="dropzone" class="dropzone">
+      <span class="upload-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-upload"></use></svg></span>
+      <h3>Arraste e solte seu arquivo aqui</h3>
+      <p>Microsoft Word (.docx) <span aria-hidden="true">·</span> Até 20 MB</p>
+      <button id="choose" class="button primary" type="button"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-upload"></use></svg> Selecionar arquivo</button>
+    </div>
+    <div id="file-row" class="file-row" hidden>
+      <span class="section-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-file"></use></svg></span>
+      <div class="file-detail"><strong id="filename"></strong><small id="filesize"></small></div>
+      <button id="replace" class="button secondary" type="button">Trocar arquivo</button>
+    </div>
+    <input id="file" type="file" accept=".docx,application/vnd.openxmlformats-officedocument.wordprocessingml.document" hidden>
+  </section>
+
+  <section id="overview" class="overview" aria-labelledby="overview-title">
+    <h2 id="overview-title">O que você pode editar</h2>
+    <div class="feature-grid">
+      <article class="feature"><span class="feature-icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-general"></use></svg></span><h3>Geral e datas</h3><p>Autor, título, revisão e datas de criação, modificação e impressão.</p></article>
+      <article class="feature"><span class="feature-icon purple"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"></use></svg></span><h3>Tempo e sistema</h3><p>Tempo de edição, empresa, aplicativo e estatísticas do documento.</p></article>
+      <article class="feature"><span class="feature-icon teal"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-layers"></use></svg></span><h3>Propriedades avançadas</h3><p>Adicione, edite ou remova propriedades personalizadas.</p></article>
+    </div>
+  </section>
+
+  <form id="editor" class="workspace-card editor" hidden>
+    <div class="tabs" role="tablist" aria-label="Grupos de metadados">
+      <button type="button" id="tab-core" role="tab" aria-selected="true" aria-controls="panel-core"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-general"></use></svg> Geral e datas</button>
+      <button type="button" id="tab-app" role="tab" aria-selected="false" aria-controls="panel-app" tabindex="-1"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-clock"></use></svg> Tempo e sistema</button>
+      <button type="button" id="tab-custom" role="tab" aria-selected="false" aria-controls="panel-custom" tabindex="-1"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-layers"></use></svg> Propriedades avançadas</button>
+    </div>
+    <section id="panel-core" role="tabpanel" aria-labelledby="tab-core" class="editor-panel"></section>
+    <section id="panel-app" role="tabpanel" aria-labelledby="tab-app" class="editor-panel" hidden></section>
+    <section id="panel-custom" role="tabpanel" aria-labelledby="tab-custom" class="editor-panel" hidden>
+      <div class="panel-heading"><div><h2>Propriedades personalizadas</h2><p>Edite os campos existentes ou adicione novos.</p></div><button type="button" class="button secondary" id="add">+ Adicionar propriedade</button></div>
+      <div id="custom-list"></div>
+      <div id="advanced-list"></div>
+    </section>
+    <div class="editor-actions">
+      <div><label class="field mode-field"><span>Modo de exportação</span><select id="mode">
+        <option value="edit">Aplicar alterações</option>
+        <option value="anon">Anonimizar / Limpar rastros</option>
+        <option value="clear">Limpar todas as propriedades</option>
+      </select></label><p id="mode-hint" class="action-hint"></p></div>
+      <button class="button primary" id="download" type="submit"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-download"></use></svg> Aplicar alterações e baixar .docx</button>
+    </div>
+  </form>
+
+  <aside class="privacy-note"><svg width="21" height="21" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><use href="#i-shield"></use></svg><p><strong>Seu documento fica no seu navegador.</strong> O arquivo não é enviado a um servidor.</p></aside>
+</main>
+
+<footer class="footer"><div class="shell footer-inner"><span>DocxMetaEditor</span><span>Microsoft Word <span aria-hidden="true">·</span> OpenXML</span></div></footer>
+<script id="embedded-worker" type="application/json">"const embeddedOpenXml = \"\\\"\\\"\\\"Read and update only the OpenXML property parts of a Word package.\\\"\\\"\\\"\\n\\nfrom datetime import datetime, timezone\\nfrom io import BytesIO\\nfrom pathlib import PurePosixPath\\nimport re\\nfrom urllib.parse import unquote, urlsplit\\nfrom zipfile import ZipFile\\n\\nfrom lxml import etree as ET\\n\\nCP = \\\"http://schemas.openxmlformats.org/package/2006/metadata/core-properties\\\"\\nDC = \\\"http://purl.org/dc/elements/1.1/\\\"\\nDT = \\\"http://purl.org/dc/terms/\\\"\\nXSI = \\\"http://www.w3.org/2001/XMLSchema-instance\\\"\\nAPP = \\\"http://schemas.openxmlformats.org/officeDocument/2006/extended-properties\\\"\\nCUSTOM = \\\"http://schemas.openxmlformats.org/officeDocument/2006/custom-properties\\\"\\nVT = \\\"http://schemas.openxmlformats.org/officeDocument/2006/docPropsVTypes\\\"\\nREL = \\\"http://schemas.openxmlformats.org/package/2006/relationships\\\"\\nCT = \\\"http://schemas.openxmlformats.org/package/2006/content-types\\\"\\nOFFICE_REL = \\\"http://schemas.openxmlformats.org/officeDocument/2006/relationships/\\\"\\nCORE_FIELDS = {\\n    \\\"creator\\\": DC, \\\"lastModifiedBy\\\": CP, \\\"created\\\": DT, \\\"modified\\\": DT,\\n    \\\"lastPrinted\\\": CP, \\\"revision\\\": CP, \\\"title\\\": DC, \\\"subject\\\": DC,\\n    \\\"keywords\\\": CP, \\\"description\\\": DC, \\\"category\\\": CP, \\\"contentStatus\\\": CP,\\n    \\\"identifier\\\": DC, \\\"language\\\": DC, \\\"version\\\": CP,\\n}\\nAPP_FIELDS = (\\n    \\\"TotalTime\\\", \\\"Company\\\", \\\"Manager\\\", \\\"Application\\\", \\\"AppVersion\\\", \\\"Pages\\\",\\n    \\\"Words\\\", \\\"Characters\\\", \\\"Paragraphs\\\", \\\"Lines\\\", \\\"CharactersWithSpaces\\\",\\n    \\\"Template\\\", \\\"HyperlinkBase\\\", \\\"PresentationFormat\\\", \\\"DocSecurity\\\",\\n    \\\"Slides\\\", \\\"Notes\\\", \\\"HiddenSlides\\\", \\\"MMClips\\\",\\n    \\\"ScaleCrop\\\", \\\"LinksUpToDate\\\", \\\"SharedDoc\\\", \\\"HyperlinksChanged\\\",\\n)\\nNUMBERS = set(APP_FIELDS[5:11]) | {\\\"revision\\\", \\\"TotalTime\\\", \\\"DocSecurity\\\", \\\"Slides\\\", \\\"Notes\\\", \\\"HiddenSlides\\\", \\\"MMClips\\\"}\\nDATES = {\\\"created\\\", \\\"modified\\\", \\\"lastPrinted\\\"}\\nBOOLEAN_APP = {\\\"ScaleCrop\\\", \\\"LinksUpToDate\\\", \\\"SharedDoc\\\", \\\"HyperlinksChanged\\\"}\\nTYPES = {\\\"lpwstr\\\", \\\"i4\\\", \\\"r8\\\", \\\"bool\\\", \\\"filetime\\\"}\\nINTEGER_BOUNDS = {\\n    \\\"i1\\\": (-2**7, 2**7-1), \\\"i2\\\": (-2**15, 2**15-1),\\n    \\\"i4\\\": (-2**31, 2**31-1), \\\"int\\\": (-2**31, 2**31-1), \\\"i8\\\": (-2**63, 2**63-1),\\n    \\\"ui1\\\": (0, 2**8-1), \\\"ui2\\\": (0, 2**16-1), \\\"ui4\\\": (0, 2**32-1),\\n    \\\"uint\\\": (0, 2**32-1), \\\"ui8\\\": (0, 2**64-1),\\n}\\nEDITABLE_TYPES = TYPES | INTEGER_BOUNDS.keys() | {\\\"lpstr\\\", \\\"bstr\\\", \\\"r4\\\", \\\"date\\\", \\\"decimal\\\"}\\nPARTS = {\\n    \\\"core\\\": (\\\"docProps/core.xml\\\", CP, \\\"coreProperties\\\", \\\"application/vnd.openxmlformats-package.core-properties+xml\\\", REL + \\\"/metadata/core-properties\\\"),\\n    \\\"app\\\": (\\\"docProps/app.xml\\\", APP, \\\"Properties\\\", \\\"application/vnd.openxmlformats-officedocument.extended-properties+xml\\\", OFFICE_REL + \\\"extended-properties\\\"),\\n    \\\"custom\\\": (\\\"docProps/custom.xml\\\", CUSTOM, \\\"Properties\\\", \\\"application/vnd.openxmlformats-officedocument.custom-properties+xml\\\", OFFICE_REL + \\\"custom-properties\\\"),\\n}\\n\\n\\nclass InvalidDocument(ValueError):\\n    pass\\n\\n\\ndef q(ns, name):\\n    return f\\\"{{{ns}}}{name}\\\"\\n\\n\\ndef xml(data):\\n    root = ET.fromstring(data, parser=ET.XMLParser(resolve_entities=False, no_network=True))\\n    if root.getroottree().docinfo.doctype:\\n        raise InvalidDocument(\\\"O pacote cont\\u00e9m uma declara\\u00e7\\u00e3o XML n\\u00e3o permitida.\\\")\\n    return root\\n\\n\\ndef serialize(root):\\n    return ET.tostring(root, encoding=\\\"UTF-8\\\", xml_declaration=True)\\n\\n\\ndef utc_date(value):\\n    try:\\n        if \\\"T\\\" not in value:\\n            raise ValueError\\n        date = datetime.fromisoformat(value)\\n        if date.tzinfo is None:\\n            date = date.replace(tzinfo=timezone.utc)\\n        return date.astimezone(timezone.utc).isoformat(timespec=\\\"seconds\\\").replace(\\\"+00:00\\\", \\\"Z\\\")\\n    except (ValueError, OverflowError):\\n        raise InvalidDocument(\\\"Informe uma data e hora v\\u00e1lidas.\\\") from None\\n\\n\\ndef text_value(value):\\n    if not isinstance(value, str) or len(value) > 32000:\\n        raise InvalidDocument(\\\"Os campos devem conter texto com at\\u00e9 32.000 caracteres.\\\")\\n    return value\\n\\n\\ndef field_value(name, value):\\n    value = text_value(value)\\n    if not value:\\n        return value\\n    if name in DATES:\\n        return utc_date(value)\\n    if name in NUMBERS:\\n        if not re.fullmatch(r\\\"[0-9]{1,10}\\\", value) or int(value) > 2**31 - 1:\\n            raise InvalidDocument(f\\\"{name} deve conter um n\\u00famero inteiro entre 0 e 2.147.483.647.\\\")\\n        return str(int(value))\\n    if name in BOOLEAN_APP and value not in {\\\"true\\\", \\\"false\\\", \\\"0\\\", \\\"1\\\"}:\\n        raise InvalidDocument(f\\\"{name} deve ser verdadeiro ou falso.\\\")\\n    return value\\n\\n\\ndef custom_value(kind, value):\\n    value = text_value(value)\\n    if kind in {\\\"filetime\\\", \\\"date\\\"}:\\n        return utc_date(value)\\n    if kind in INTEGER_BOUNDS:\\n        lower, upper = INTEGER_BOUNDS[kind]\\n        if not re.fullmatch(r\\\"[+-]?[0-9]{1,20}\\\", value) or not lower \u003c= int(value) \u003c= upper:\\n            raise InvalidDocument(f\\\"Informe um inteiro v\\u00e1lido para o tipo {kind}.\\\")\\n        return str(int(value))\\n    if kind in {\\\"r4\\\", \\\"r8\\\", \\\"decimal\\\"}:\\n        pattern = r\\\"[+-]?(?:[0-9]+(?:\\\\.[0-9]*)?|\\\\.[0-9]+)\\\"\\n        if kind != \\\"decimal\\\":\\n            pattern += r\\\"(?:[eE][+-]?[0-9]+)?\\\"\\n        if not re.fullmatch(pattern, value):\\n            raise InvalidDocument(\\\"Informe um n\\u00famero decimal v\\u00e1lido, usando ponto.\\\")\\n        if kind != \\\"decimal\\\" and abs(float(value)) > (3.402823466e38 if kind == \\\"r4\\\" else 1.7976931348623157e308):\\n            raise InvalidDocument(\\\"O n\\u00famero excede o limite do tipo escolhido.\\\")\\n    if kind == \\\"bool\\\" and value not in {\\\"true\\\", \\\"false\\\", \\\"0\\\", \\\"1\\\"}:\\n        raise InvalidDocument(\\\"O valor l\\u00f3gico deve ser true ou false.\\\")\\n    return value\\n\\n\\nclass Document:\\n    def __init__(self, stream):\\n        self.archive = ZipFile(stream)\\n        try:\\n            self._load()\\n        except Exception:\\n            self.archive.close()\\n            raise\\n\\n    def _load(self):\\n        entries = self.archive.infolist()\\n        self.names = set(self.archive.namelist())\\n        if len(entries) > 5000 or sum(entry.file_size for entry in entries) > 100 * 1024**2:\\n            raise InvalidDocument(\\\"O documento excede os limites do pacote (100 MB descompactados).\\\")\\n        if len(entries) != len(self.names) or any(entry.flag_bits & 1 for entry in entries):\\n            raise InvalidDocument(\\\"O pacote cont\\u00e9m entradas duplicadas ou protegidas por senha.\\\")\\n        self.types = self.read_xml(\\\"[Content_Types].xml\\\")\\n        self.rels = self.read_xml(\\\"_rels/.rels\\\")\\n        if self.types is None or self.rels is None or not any(\\n            entry.get(\\\"ContentType\\\") == \\\"application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml\\\"\\n            and (entry.get(\\\"PartName\\\") or \\\"\\\").lstrip(\\\"/\\\") in self.names\\n            for entry in self.types.findall(q(CT, \\\"Override\\\"))\\n        ):\\n            raise InvalidDocument(\\\"Selecione um documento Word .docx v\\u00e1lido.\\\")\\n        self.parts = {}\\n        self.paths = {}\\n        self.writes = {}\\n        for group, (default, namespace, root_name, _, relationship) in PARTS.items():\\n            links = [link for link in self.rels.findall(q(REL, \\\"Relationship\\\")) if link.get(\\\"Type\\\") == relationship]\\n            if len(links) > 1:\\n                raise InvalidDocument(\\\"O pacote declara mais de uma parte do mesmo tipo de metadado.\\\")\\n            uri = urlsplit(links[0].get(\\\"Target\\\", \\\"\\\") if links else default)\\n            target = unquote(uri.path).lstrip(\\\"/\\\")\\n            path = str(PurePosixPath(target))\\n            if (\\n                not target or path == \\\".\\\" or \\\"..\\\" in PurePosixPath(target).parts\\n                or uri.scheme or uri.netloc or uri.fragment or uri.query\\n                or path in self.paths.values() or path in {\\\"[Content_Types].xml\\\", \\\"_rels/.rels\\\"}\\n                or (links and links[0].get(\\\"TargetMode\\\") == \\\"External\\\")\\n            ):\\n                raise InvalidDocument(\\\"O pacote cont\\u00e9m um caminho de metadados inv\\u00e1lido.\\\")\\n            if links and path not in self.names and self.types.find(\\n                f\\\"{{{CT}}}Override[@PartName='/{default}']\\\"\\n            ) is not None and default != path:\\n                raise InvalidDocument(\\\"O pacote cont\\u00e9m uma refer\\u00eancia de metadados inconsistente.\\\")\\n            root = self.read_xml(path)\\n            if root is not None and root.tag != q(namespace, root_name):\\n                raise InvalidDocument(\\\"O pacote cont\\u00e9m uma parte de metadados inv\\u00e1lida.\\\")\\n            self.parts[group] = root\\n            self.paths[group] = path\\n\\n    def read_xml(self, name):\\n        if name not in self.names:\\n            return None\\n        if self.archive.getinfo(name).file_size > 4 * 1024**2:\\n            raise InvalidDocument(\\\"Uma parte XML de metadados excede 4 MB.\\\")\\n        return xml(self.archive.read(name))\\n\\n    def fields(self, group):\\n        return CORE_FIELDS if group == \\\"core\\\" else dict.fromkeys(APP_FIELDS, APP)\\n\\n    def custom_entries(self):\\n        root = self.parts[\\\"custom\\\"]\\n        return [] if root is None else root.findall(q(CUSTOM, \\\"property\\\"))\\n\\n    def inspect(self):\\n        result = {}\\n        for group in (\\\"core\\\", \\\"app\\\"):\\n            root = self.parts[group]\\n            result[group] = {} if root is None else {\\n                name: root.findtext(q(namespace, name), default=\\\"\\\")\\n                for name, namespace in self.fields(group).items()\\n            }\\n        if self.parts[\\\"app\\\"] is not None:\\n            result[\\\"advanced\\\"] = [\\n                {\\\"name\\\": ET.QName(node).localname, \\\"values\\\": [\\n                    child.text for child in node.iter() if len(child) == 0 and child.text\\n                ]}\\n                for node in self.parts[\\\"app\\\"] if isinstance(node.tag, str)\\n                and node.tag not in {q(APP, key) for key in APP_FIELDS}\\n            ]\\n        result[\\\"custom\\\"] = []\\n        for index, node in enumerate(self.custom_entries()):\\n            child = node[0] if len(node) and isinstance(node[0].tag, str) else None\\n            kind = ET.QName(child).localname if child is not None else \\\"\\\"\\n            editable = child is not None and ET.QName(child).namespace == VT and kind in EDITABLE_TYPES and not len(child)\\n            result[\\\"custom\\\"].append({\\n                \\\"id\\\": index, \\\"name\\\": node.get(\\\"name\\\", \\\"\\\"), \\\"type\\\": kind,\\n                \\\"value\\\": (child.text or \\\"\\\") if editable else \\\" \\\".join(node.itertext()).strip(),\\n                \\\"editable\\\": editable,\\n            })\\n        return result\\n\\n    def ensure_part(self, group):\\n        if self.parts[group] is None:\\n            _, ns, name, _, _ = PARTS[group]\\n            nsmap = {\\\"cp\\\": CP, \\\"dc\\\": DC, \\\"dcterms\\\": DT, \\\"xsi\\\": XSI} if group == \\\"core\\\" else {None: ns, \\\"vt\\\": VT}\\n            self.parts[group] = ET.Element(q(ns, name), nsmap=nsmap)\\n        return self.parts[group]\\n\\n    def register(self, group, remove=False):\\n        path = \\\"/\\\" + self.paths[group]\\n        _, _, _, content_type, relationship = PARTS[group]\\n        override = next((\\n            node for node in self.types.findall(q(CT, \\\"Override\\\"))\\n            if unquote(node.get(\\\"PartName\\\", \\\"\\\")) == path\\n        ), None)\\n        link = next((node for node in self.rels.findall(q(REL, \\\"Relationship\\\")) if node.get(\\\"Type\\\") == relationship), None)\\n        if remove:\\n            if override is not None:\\n                self.types.remove(override)\\n            if link is not None:\\n                self.rels.remove(link)\\n        else:\\n            if override is None:\\n                ET.SubElement(self.types, q(CT, \\\"Override\\\"), PartName=path, ContentType=content_type)\\n            if link is None:\\n                ids = {node.get(\\\"Id\\\") for node in self.rels}\\n                index = 1\\n                while f\\\"rId{index}\\\" in ids:\\n                    index += 1\\n                ET.SubElement(self.rels, q(REL, \\\"Relationship\\\"), Id=f\\\"rId{index}\\\", Type=relationship, Target=path[1:])\\n        if remove == (override is not None):\\n            self.writes[\\\"[Content_Types].xml\\\"] = serialize(self.types)\\n        if remove == (link is not None):\\n            self.writes[\\\"_rels/.rels\\\"] = serialize(self.rels)\\n\\n    def update_fields(self, group, changes):\\n        if not isinstance(changes, dict):\\n            raise InvalidDocument(\\\"Formato de campos inv\\u00e1lido.\\\")\\n        fields = self.fields(group)\\n        for name, raw in changes.items():\\n            if name not in fields:\\n                raise InvalidDocument(\\\"Campo de metadados desconhecido.\\\")\\n            value = field_value(name, raw)\\n            root = self.parts[group]\\n            tag = q(fields[name], name)\\n            node = root.find(tag) if root is not None else None\\n            if value == (node.text or \\\"\\\" if node is not None else \\\"\\\"):\\n                continue\\n            if value:\\n                root = self.ensure_part(group)\\n                if node is None:\\n                    node = ET.SubElement(root, tag)\\n                node.text = value\\n                if name in {\\\"created\\\", \\\"modified\\\"}:\\n                    prefix = next((p for p, uri in node.nsmap.items() if p and uri == DT), None)\\n                    if prefix is None:\\n                        replacement = ET.Element(tag, nsmap={\\\"dcterms\\\": DT})\\n                        replacement.attrib.update(node.attrib)\\n                        replacement.text, replacement.tail = node.text, node.tail\\n                        root.replace(node, replacement)\\n                        node, prefix = replacement, \\\"dcterms\\\"\\n                    node.set(q(XSI, \\\"type\\\"), f\\\"{prefix}:W3CDTF\\\")\\n            else:\\n                root.remove(node)\\n            self.register(group)\\n            self.writes[self.paths[group]] = serialize(root)\\n\\n    def update_custom(self, changes):\\n        if not isinstance(changes, list) or len(changes) > 1000:\\n            raise InvalidDocument(\\\"Formato ou quantidade de propriedades personalizadas inv\\u00e1lidos.\\\")\\n        original = self.custom_entries()\\n        root = self.parts[\\\"custom\\\"]\\n        handled = set()\\n        used_pids = {node.get(\\\"pid\\\") for node in original}\\n        if any(not isinstance(item, dict) for item in changes):\\n            raise InvalidDocument(\\\"Propriedade personalizada inv\\u00e1lida.\\\")\\n        names = {index: node.get(\\\"name\\\", \\\"\\\").casefold() for index, node in enumerate(original)}\\n        changed_names = {}\\n        dirty = False\\n        for position, item in enumerate(changes):\\n            index = item.get(\\\"id\\\")\\n            node = None\\n            if index is not None:\\n                if type(index) is not int or not 0 \u003c= index \u003c len(original) or index in handled:\\n                    raise InvalidDocument(\\\"Identificador de propriedade personalizada inv\\u00e1lido.\\\")\\n                handled.add(index)\\n                node = original[index]\\n            if item.get(\\\"remove\\\") is True and node is not None:\\n                root.remove(node)\\n                names.pop(index)\\n                dirty = True\\n                continue\\n            name = text_value(item.get(\\\"name\\\")).strip()\\n            if not name or len(name) > 255:\\n                raise InvalidDocument(\\\"Use nomes de 1 a 255 caracteres para propriedades personalizadas.\\\")\\n            old_name = node.get(\\\"name\\\", \\\"\\\") if node is not None else \\\"\\\"\\n            key = index if index is not None else len(original) + position\\n            if name.casefold() != names.get(key):\\n                changed_names[key] = name.casefold()\\n            names[key] = name.casefold()\\n            kind = text_value(item.get(\\\"type\\\"))\\n            raw = text_value(item.get(\\\"value\\\"))\\n            child = node[0] if node is not None and len(node) and isinstance(node[0].tag, str) else None\\n            if child is not None and child.tag == q(VT, kind) and not len(child) and raw == (child.text or \\\"\\\") and name == old_name:\\n                continue\\n            if kind not in EDITABLE_TYPES:\\n                raise InvalidDocument(\\\"Tipo de propriedade personalizada n\\u00e3o edit\\u00e1vel.\\\")\\n            if node is None and kind not in TYPES:\\n                raise InvalidDocument(\\\"Tipo inv\\u00e1lido para uma nova propriedade personalizada.\\\")\\n            if node is not None and (child is None or len(child) or child.tag not in {q(VT, t) for t in EDITABLE_TYPES}):\\n                raise InvalidDocument(\\\"Esta propriedade personalizada s\\u00f3 pode ser removida.\\\")\\n            value = custom_value(kind, raw)\\n            if node is None:\\n                root = self.ensure_part(\\\"custom\\\")\\n                pid = 2\\n                while str(pid) in used_pids:\\n                    pid += 1\\n                used_pids.add(str(pid))\\n                node = ET.SubElement(root, q(CUSTOM, \\\"property\\\"), fmtid=\\\"{D5CDD505-2E9C-101B-9397-08002B2CF9AE}\\\", pid=str(pid))\\n            node.set(\\\"name\\\", name)\\n            if child is None or child.tag != q(VT, kind):\\n                if child is not None:\\n                    node.remove(child)\\n                child = ET.SubElement(node, q(VT, kind))\\n            child.text = value\\n            dirty = True\\n        if changed_names:\\n            counts = {}\\n            for name in names.values():\\n                counts[name] = counts.get(name, 0) + 1\\n            if any(counts[name] > 1 for name in changed_names.values()):\\n                raise InvalidDocument(\\\"Os nomes das propriedades personalizadas devem ser \\u00fanicos.\\\")\\n        if dirty:\\n            self.register(\\\"custom\\\")\\n            self.writes[self.paths[\\\"custom\\\"]] = serialize(root)\\n\\n    def anonymize(self):\\n        stamp = datetime.now(timezone.utc).strftime(\\\"%Y-%m-%dT%H:%M:%SZ\\\")\\n        self.update_fields(\\\"core\\\", {\\n            \\\"creator\\\": \\\"\\\", \\\"lastModifiedBy\\\": \\\"\\\", \\\"revision\\\": \\\"1\\\",\\n            \\\"created\\\": stamp, \\\"modified\\\": stamp, \\\"lastPrinted\\\": \\\"\\\",\\n        })\\n        self.update_fields(\\\"app\\\", {\\\"Company\\\": \\\"\\\", \\\"Manager\\\": \\\"\\\", \\\"TotalTime\\\": \\\"0\\\"})\\n        self.remove_properties(\\\"custom\\\")\\n\\n    def remove_properties(self, *groups):\\n        for group in groups:\\n            self.register(group, remove=True)\\n            self.writes[self.paths[group]] = None\\n\\n    def apply(self, changes):\\n        if not isinstance(changes, dict):\\n            raise InvalidDocument(\\\"Formato de altera\\u00e7\\u00f5es inv\\u00e1lido.\\\")\\n        mode = changes.get(\\\"mode\\\", \\\"edit\\\")\\n        if mode == \\\"clear\\\":\\n            self.remove_properties(\\\"core\\\", \\\"app\\\", \\\"custom\\\")\\n        elif mode in (\\\"edit\\\", \\\"anon\\\"):\\n            self.update_fields(\\\"core\\\", changes.get(\\\"core\\\", {}))\\n            self.update_fields(\\\"app\\\", changes.get(\\\"app\\\", {}))\\n            if mode == \\\"anon\\\":\\n                self.anonymize()\\n            else:\\n                self.update_custom(changes.get(\\\"custom\\\", []))\\n        else:\\n            raise InvalidDocument(\\\"Modo de edi\\u00e7\\u00e3o inv\\u00e1lido.\\\")\\n\\n    def export(self):\\n        output = BytesIO()\\n        with ZipFile(output, \\\"w\\\") as archive:\\n            archive.comment = self.archive.comment\\n            for entry in self.archive.infolist():\\n                data = self.writes[entry.filename] if entry.filename in self.writes else self.archive.read(entry)\\n                if data is not None:\\n                    archive.writestr(entry, data)\\n            for name in self.writes.keys() - self.names:\\n                if self.writes[name] is not None:\\n                    archive.writestr(name, self.writes[name])\\n        output.seek(0)\\n        return output\\n\";\n'use strict';\n\nconst runtimeUrl = 'https://cdn.jsdelivr.net/pyodide/v0.29.3/full/';\nlet runtime;\nlet queue = Promise.resolve();\n\nasync function loadRuntime() {\n  importScripts(runtimeUrl + 'pyodide.js');\n  const python = await loadPyodide({indexURL: runtimeUrl});\n  let source = typeof embeddedOpenXml === 'string' ? embeddedOpenXml : null;\n  if (source === null) {\n    const response = await fetch('./openxml.py');\n    if (!response.ok) throw new Error('OpenXML module unavailable');\n    source = await response.text();\n  }\n  await python.loadPackage('lxml');\n  python.FS.writeFile('/home/pyodide/openxml.py', source);\n  python.runPython(`\nimport json\nfrom io import BytesIO\nfrom zipfile import BadZipFile, LargeZipFile\nfrom lxml import etree\nfrom openxml import Document, InvalidDocument\n\ndef process(path, payload, changes):\n    try:\n        document = Document(BytesIO(payload.to_py()))\n        with document.archive:\n            if path == 'inspect':\n                return True, json.dumps(document.inspect())\n            document.apply(json.loads(changes))\n            return True, document.export().getvalue()\n    except InvalidDocument as error:\n        return False, str(error)\n    except (BadZipFile, LargeZipFile, etree.XMLSyntaxError, RuntimeError, ValueError, NotImplementedError):\n        return False, \"N\u00e3o foi poss\u00edvel processar o documento ou os valores informados.\"\n`);\n  return python;\n}\n\nasync function processRequest({id, path, bytes, changes}) {\n  try {\n    runtime ??= loadRuntime();\n    let python;\n    try {\n      python = await runtime;\n    } catch (error) {\n      runtime = null;\n      throw error;\n    }\n    const process = python.globals.get('process');\n    try {\n      const response = process(path, new Uint8Array(bytes), changes);\n      try {\n        const [ok, result] = response.toJs();\n        if (!ok) postMessage({id, error: result});\n        else if (path === 'inspect') postMessage({id, result});\n        else postMessage({id, result}, [result.buffer]);\n      } finally {\n        response.destroy();\n      }\n    } finally {\n      process.destroy();\n    }\n  } catch (error) {\n    console.error(error);\n    postMessage({id, error: 'N\u00e3o foi poss\u00edvel processar o arquivo no navegador. Confira a conex\u00e3o e tente novamente.'});\n  }\n}\n\nself.addEventListener('message', ({data}) => {\n  queue = queue.then(() => processRequest(data));\n});\n"</script>
+<script>'use strict';
+
+const embeddedWorker = document.getElementById('embedded-worker');
+const workerUrl = embeddedWorker
+  ? URL.createObjectURL(new Blob([JSON.parse(embeddedWorker.textContent)], {type: 'text/javascript'}))
+  : new URL('./worker.js', document.currentScript.src);
+let worker;
+let nextRequest = 0;
+const pending = new Map();
+
+function getWorker() {
+  if (worker) return worker;
+  worker = new Worker(workerUrl);
+  worker.addEventListener('message', ({data}) => {
+    const request = pending.get(data.id);
+    if (!request) return;
+    pending.delete(data.id);
+    if (data.error) request.reject(new Error(data.error));
+    else request.resolve(data.result);
+  });
+  worker.addEventListener('error', () => {
+    const error = new Error('Não foi possível iniciar o editor. Recarregue a página e tente novamente.');
+    for (const request of pending.values()) request.reject(error);
+    pending.clear();
+    worker.terminate();
+    worker = null;
+  });
+  return worker;
+}
+
+window.processDocxLocally = async (path, file, changes) => {
+  const bytes = await file.arrayBuffer();
+  const activeWorker = getWorker();
+  const id = ++nextRequest;
+  const result = await new Promise((resolve, reject) => {
+    pending.set(id, {resolve, reject});
+    activeWorker.postMessage({id, path, bytes, changes: JSON.stringify(changes ?? {})}, [bytes]);
+  });
+  return path === 'inspect'
+    ? new Response(result, {headers: {'Content-Type': 'application/json'}})
+    : new Response(result);
+};
+</script>
+  <script>'use strict';
+
+const byId = (id) => document.getElementById(id);
+const fileInput = byId('file');
+const form = byId('editor');
+const status = byId('status');
+const dropzone = byId('dropzone');
+const download = byId('download');
+const mode = byId('mode');
+const modeHints = {
+  edit: 'Os campos alterados são gravados em uma nova cópia.',
+  anon: 'Redefine autoria, datas, revisão, empresa, gerente e tempo de edição. Remove propriedades personalizadas e preserva comentários e alterações controladas.',
+  clear: 'Remove todas as propriedades gerais, estendidas e personalizadas. Preserva comentários e alterações controladas.',
+};
+function showMode() {
+  byId('mode-hint').textContent = modeHints[mode.value];
+}
+mode.addEventListener('change', showMode);
+showMode();
+const customList = byId('custom-list');
+const groups = {
+  core: [
+    ['creator', 'Autor'], ['lastModifiedBy', 'Último modificado por'],
+    ['title', 'Título'], ['subject', 'Assunto'],
+    ['keywords', 'Palavras-chave'], ['category', 'Categoria'],
+    ['description', 'Descrição / Comentários', 'textarea'], ['contentStatus', 'Status'],
+    ['created', 'Criação (UTC)', 'date'], ['modified', 'Última modificação (UTC)', 'date'],
+    ['lastPrinted', 'Última impressão (UTC)', 'date'], ['revision', 'Revisão', 'number'],
+    ['identifier', 'Identificador'], ['language', 'Idioma'], ['version', 'Versão do documento'],
+  ],
+  app: [
+    ['TotalTime', 'Tempo total de edição (minutos)', 'number'], ['Company', 'Empresa / Instituição'],
+    ['Manager', 'Gerente'], ['Application', 'Aplicativo gerador'], ['AppVersion', 'Versão do aplicativo'],
+    ['Template', 'Modelo'], ['Pages', 'Páginas', 'number'], ['Words', 'Palavras', 'number'],
+    ['Characters', 'Caracteres', 'number'], ['CharactersWithSpaces', 'Caracteres com espaços', 'number'],
+    ['Paragraphs', 'Parágrafos', 'number'], ['Lines', 'Linhas', 'number'],
+    ['HyperlinkBase', 'Base de hiperlinks'], ['PresentationFormat', 'Formato da apresentação'],
+    ['DocSecurity', 'Indicador de segurança', 'number'], ['Slides', 'Slides', 'number'],
+    ['Notes', 'Notas', 'number'], ['HiddenSlides', 'Slides ocultos', 'number'],
+    ['MMClips', 'Clipes multimídia', 'number'], ['ScaleCrop', 'Ajuste de miniatura', 'boolean'],
+    ['LinksUpToDate', 'Links atualizados', 'boolean'], ['SharedDoc', 'Documento compartilhado', 'boolean'],
+    ['HyperlinksChanged', 'Hiperlinks alterados', 'boolean'],
+  ],
+};
+const typeLabels = {lpwstr: 'Texto', i4: 'Inteiro', r8: 'Decimal', bool: 'Lógico', filetime: 'Data e hora (UTC)'};
+const fields = {core: [], app: []};
+const rows = new Map();
+let currentFile = null;
+let loadVersion = 0;
+
+function create(tag, className, content) {
+  const element = document.createElement(tag);
+  if (className) element.className = className;
+  if (content !== undefined) element.textContent = content;
+  return element;
+}
+
+function announce(message, error = false) {
+  status.hidden = !message;
+  status.classList.toggle('error', error);
+  status.textContent = message;
+}
+
+function dateInputValue(raw) {
+  if (!raw) return '';
+  const source = /(?:Z|[+-]\d{2}:\d{2})$/i.test(raw) ? raw : raw + 'Z';
+  const date = new Date(source);
+  return Number.isNaN(date.getTime()) ? '' : date.toISOString().slice(0, 19);
+}
+
+function makeField(label, control) {
+  const field = create('label', 'field');
+  field.append(create('span', '', label), control);
+  return field;
+}
+
+function selectValues(values) {
+  const select = create('select');
+  for (const [value, label] of Object.entries(values)) select.add(new Option(label, value));
+  return select;
+}
+
+function renderFields(group, data) {
+  const grid = create('div', 'field-grid');
+  fields[group] = groups[group].map(([key, label, type]) => {
+    const raw = data[key] || '';
+    const input = type === 'boolean' ? selectValues({'': '—', true: 'Sim', false: 'Não'}) :
+      create(type === 'textarea' ? 'textarea' : 'input');
+    if (input.tagName === 'INPUT') {
+      input.type = type === 'date' ? 'datetime-local' : type || 'text';
+      if (type === 'date') input.step = '1';
+      if (type === 'number') {
+        input.min = '0';
+        input.max = '2147483647';
+      }
+    }
+    const field = makeField(label, input);
+    input.value = type === 'date' ? dateInputValue(raw) : type === 'boolean' ?
+      ({'1': 'true', '0': 'false'}[raw] || raw) : raw;
+    if (raw && !input.value) field.append(create('small', '', 'Valor original: ' + raw));
+    if (key === 'TotalTime') {
+      const hint = create('small');
+      const update = () => {
+        const minutes = Number(input.value);
+        hint.textContent = input.value && Number.isSafeInteger(minutes) && minutes >= 0 ?
+          Math.floor(minutes / 60) + ' h ' + minutes % 60 + ' min' : 'Informe o tempo em minutos.';
+      };
+      input.addEventListener('input', update);
+      update();
+      field.append(hint);
+    }
+    grid.append(field);
+    return {key, input, type, baseline: input.value};
+  });
+  byId('panel-' + group).replaceChildren(grid);
+}
+
+function refreshEmpty() {
+  const empty = customList.querySelector('.empty');
+  if (!customList.querySelector('.custom-row')) {
+    if (!empty) customList.append(create('p', 'empty', 'Nenhuma propriedade personalizada.'));
+  } else {
+    empty?.remove();
+  }
+}
+
+function addCustom(item = {name: '', type: 'lpwstr', value: '', editable: true}) {
+  const row = create('div', 'custom-row');
+  const name = create('input');
+  name.maxLength = 255;
+  name.value = item.name;
+  const types = {...typeLabels};
+  if (!Object.hasOwn(types, item.type)) types[item.type] = item.type || 'Tipo desconhecido';
+  const type = selectValues(types);
+  type.value = item.type;
+  const value = create('input');
+  const setType = (raw = '') => {
+    const date = ['filetime', 'date'].includes(type.value);
+    value.type = date && item.editable ? 'datetime-local' : 'text';
+    value.step = date ? '1' : 'any';
+    value.value = date && item.editable ? dateInputValue(raw) : raw;
+    value.placeholder = type.value === 'bool' ? 'true ou false' : '';
+  };
+  setType(item.value);
+  const initial = [name.value, type.value, value.value];
+  type.addEventListener('change', () => setType());
+  name.disabled = type.disabled = value.disabled = !item.editable;
+  const remove = create('button', 'button secondary', 'Remover');
+  remove.type = 'button';
+  remove.setAttribute('aria-label', 'Remover propriedade personalizada');
+  const record = {item, name, type, value, initial, removed: false};
+  remove.addEventListener('click', () => {
+    record.removed = true;
+    row.remove();
+    refreshEmpty();
+  });
+  row.append(makeField('Nome', name), makeField('Tipo', type), makeField('Valor', value), remove);
+  customList.append(row);
+  rows.set(row, record);
+  refreshEmpty();
+  if (item.id === undefined) name.focus();
+}
+
+function renderAdvanced(items) {
+  const list = byId('advanced-list');
+  list.replaceChildren();
+  if (!items.length) return;
+  list.append(create('h2', '', 'Estruturas adicionais'));
+  for (const item of items) list.append(create('p', 'advanced-item', item.name + ' · ' + item.values.join(', ')));
+}
+
+const tabs = Array.from(document.querySelectorAll('[role=tab]'));
+function selectTab(selected) {
+  for (const tab of tabs) {
+    const active = tab === selected;
+    tab.setAttribute('aria-selected', String(active));
+    tab.tabIndex = active ? 0 : -1;
+    byId(tab.getAttribute('aria-controls')).hidden = !active;
+  }
+}
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectTab(tab));
+  tab.addEventListener('keydown', (event) => {
+    const target = {ArrowLeft: (index + tabs.length - 1) % tabs.length,
+      ArrowRight: (index + 1) % tabs.length, Home: 0, End: tabs.length - 1}[event.key];
+    if (target === undefined) return;
+    event.preventDefault();
+    selectTab(tabs[target]);
+    tabs[target].focus();
+  });
+});
+
+async function send(path, file, changes) {
+  if (window.processDocxLocally) return window.processDocxLocally(path, file, changes);
+  const data = new FormData();
+  data.append('file', file);
+  if (changes) data.append('changes', JSON.stringify(changes));
+  const response = await fetch('/api/' + path, {method: 'POST', body: data});
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    throw new Error(result.error || 'Não foi possível processar o documento.');
+  }
+  return response;
+}
+
+async function loadFile(file) {
+  if (!file) return;
+  const version = ++loadVersion;
+  fileInput.value = '';
+  if (!/\.docx$/i.test(file.name) || file.size > 20 * 1024 ** 2) {
+    announce('Selecione um arquivo .docx de até 20 MB.', true);
+    return;
+  }
+  announce('Lendo metadados…');
+  try {
+    const result = await (await send('inspect', file)).json();
+    if (version !== loadVersion) return;
+    currentFile = file;
+    byId('filename').textContent = file.name;
+    byId('filesize').textContent = new Intl.NumberFormat('pt-BR', {style: 'unit', unit: 'kilobyte',
+      maximumFractionDigits: 1}).format(file.size / 1024);
+    renderFields('core', result.core);
+    renderFields('app', result.app);
+    rows.clear();
+    customList.replaceChildren();
+    for (const item of result.custom) addCustom(item);
+    refreshEmpty();
+    renderAdvanced(result.advanced || []);
+    mode.value = 'edit';
+    showMode();
+    selectTab(tabs[0]);
+    dropzone.hidden = byId('overview').hidden = true;
+    byId('file-row').hidden = form.hidden = false;
+    announce('Documento carregado.');
+  } catch (error) {
+    if (version === loadVersion) announce(error.message, true);
+  }
+}
+
+byId('choose').addEventListener('click', () => fileInput.click());
+byId('replace').addEventListener('click', () => fileInput.click());
+fileInput.addEventListener('change', () => loadFile(fileInput.files[0]));
+for (const target of [dropzone, byId('file-row')]) {
+  target.addEventListener('dragover', (event) => {
+    event.preventDefault();
+    target.classList.add('is-dragging');
+  });
+  target.addEventListener('dragleave', () => target.classList.remove('is-dragging'));
+  target.addEventListener('drop', (event) => {
+    event.preventDefault();
+    target.classList.remove('is-dragging');
+    loadFile(event.dataTransfer.files[0]);
+  });
+}
+byId('add').addEventListener('click', () => addCustom());
+
+form.addEventListener('invalid', (event) => {
+  const panel = event.target.closest('[role=tabpanel]');
+  if (panel) selectTab(byId(panel.getAttribute('aria-labelledby')));
+}, true);
+
+form.addEventListener('submit', async (event) => {
+  event.preventDefault();
+  if (!currentFile) return;
+  const file = currentFile;
+  const changes = {core: {}, app: {}, custom: [], mode: mode.value};
+  for (const group of ['core', 'app']) {
+    for (const {key, input, type, baseline} of fields[group]) {
+      if (input.value !== baseline) changes[group][key] = type === 'date' && input.value ? input.value + 'Z' : input.value;
+    }
+  }
+  if (mode.value === 'edit') {
+    for (const {item, name, type, value, initial, removed} of rows.values()) {
+      if (removed) {
+        if (item.id !== undefined) changes.custom.push({id: item.id, remove: true});
+      } else if (item.id === undefined || [name.value, type.value, value.value].some((entry, i) => entry !== initial[i])) {
+        changes.custom.push({id: item.id, name: name.value, type: type.value,
+          value: value.type === 'datetime-local' && value.value ? value.value + 'Z' : value.value});
+      }
+    }
+  }
+  download.disabled = true;
+  announce('Preparando o documento…');
+  try {
+    const response = await send('download', file, changes);
+    const url = URL.createObjectURL(await response.blob());
+    const anchor = create('a');
+    anchor.href = url;
+    anchor.download = file.name.replace(/\.docx$/i, '-editado.docx');
+    document.body.append(anchor);
+    anchor.click();
+    anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
+    announce('Documento pronto. O download foi iniciado.');
+  } catch (error) {
+    announce(error.message, true);
+  } finally {
+    download.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
